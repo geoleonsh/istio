@@ -4732,7 +4732,7 @@ subjects:
     namespace: istio-system
 ---
 # Source: base/templates/validatingwebhookconfiguration.yaml
-apiVersion: admissionregistration.k8s.io/v1beta1
+apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingWebhookConfiguration
 metadata:
   name: istiod-istio-system
@@ -4766,3 +4766,4 @@ webhooks:
     # endpoint is ready.
     failurePolicy: Ignore
     sideEffects: None
+    admissionReviewVersions: ["v1", "v1beta1"]
