@@ -1,0 +1,8 @@
+# hadolint ignore=DL3007
+FROM gcr.io/distroless/static:latest
+
+COPY mixs /usr/local/bin/
+
+ENTRYPOINT ["/usr/local/bin/mixs", "server"]
+
+CMD ["--configStoreURL=fs:///etc/opt/mixer/configroot","--configStoreURL=k8s://"]
